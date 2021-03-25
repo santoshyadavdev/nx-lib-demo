@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-lib-demo/todo-util": ["libs/todo-util/src/index.ts"],
+      "@nx-lib-demo/todo-shared": ["libs/todo-shared/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

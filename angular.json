@@ -145,6 +145,68 @@
           }
         }
       }
+    },
+    "todo-util": {
+      "projectType": "library",
+      "root": "libs/todo-util",
+      "sourceRoot": "libs/todo-util/src",
+      "prefix": "nx-lib-demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/todo-util/src/**/*.ts",
+              "libs/todo-util/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/todo-util"],
+          "options": {
+            "jestConfig": "libs/todo-util/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "todo-shared": {
+      "projectType": "library",
+      "root": "libs/todo-shared",
+      "sourceRoot": "libs/todo-shared/src",
+      "prefix": "nx-lib-demo",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/todo-shared/tsconfig.lib.json",
+            "project": "libs/todo-shared/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/todo-shared/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/todo-shared/src/**/*.ts",
+              "libs/todo-shared/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/todo-shared"],
+          "options": {
+            "jestConfig": "libs/todo-shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
