@@ -20,6 +20,7 @@
     "todo-app-e2e": { "tags": [], "implicitDependencies": ["todo-app"] },
     "todo-util": { "tags": [] },
     "todo-shared": { "tags": [] },
-    "todo-public": { "tags": [] }
+    "todo-public": { "tags": [] },
+    "todo-common": { "tags": [] }
   }
 }

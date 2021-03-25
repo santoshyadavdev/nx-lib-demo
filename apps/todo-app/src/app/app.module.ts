@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { TodoSharedModule } from '@nx-lib-demo/todo-shared';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, TodoSharedModule],
+  imports: [BrowserModule, TodoSharedModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
