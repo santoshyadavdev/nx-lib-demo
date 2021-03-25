@@ -207,6 +207,43 @@
           }
         }
       }
+    },
+    "todo-public": {
+      "projectType": "library",
+      "root": "libs/todo-public",
+      "sourceRoot": "libs/todo-public/src",
+      "prefix": "nx-lib-demo",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/todo-public/tsconfig.lib.json",
+            "project": "libs/todo-public/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/todo-public/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/todo-public/src/**/*.ts",
+              "libs/todo-public/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/todo-public"],
+          "options": {
+            "jestConfig": "libs/todo-public/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
