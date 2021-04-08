@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { getStatus } from '@nx-lib-demo/todo-util';
+import { getStatus } from '@nx-lib-demo/todo-util/util';
+
+import { sub } from '@nx-lib-demo/todo-util/calc';
 import { TodoService } from '@nx-lib-demo/todo-common';
 @Component({
   selector: 'nx-lib-demo-root',
